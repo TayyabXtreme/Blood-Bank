@@ -41,3 +41,11 @@ example
 # generated native folders
 /ios
 /android
+
+# local service configuration and research cache
+.env
+.env.*
+!.env.example
+.firecrawl/
+coverage/
+test-results/

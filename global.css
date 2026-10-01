@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  body {
+    background: #eee8e6;
+  }
+  #root {
+    max-width: 520px;
+    margin: 0 auto;
+    min-height: 100vh;
+    box-shadow: 0 0 80px #25202414;
+  }
+}

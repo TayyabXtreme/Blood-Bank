@@ -1,0 +1,9 @@
+node_modules
+.expo
+.firecrawl
+dist
+package-lock.json
+convex/_generated
+assets
+Plan.md
+AGENTS.md

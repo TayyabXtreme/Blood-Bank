@@ -1,56 +1,89 @@
-# Welcome to your Expo app 👋
+# BloodBank
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile-first blood donation coordination MVP based on [Plan.md](./Plan.md), built with Expo SDK 57, React Native, Expo Router, NativeWind, Better Auth, and Convex.
 
-## Get started
+## Run the interactive demo
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```powershell
+npm ci
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Use `npm run web` for a browser preview. Without an explicit live-mode setting, the app uses fictional sample data. Choose donor, requester, coordinator, or administrator on the welcome screen. Switch roles from Profile without losing the current demo session to try creation → verification → acceptance → confirmation → completion.
 
-### Other setup steps
+Demo state is in memory and resets on restart. Demo authentication is a labeled simulation; passwords are never stored, authenticated, or transmitted. Reset sample data from Profile to start again. Demo commands never mutate the live Convex database.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Included
 
-## Learn more
+- Email/password signup/signin, native secure sessions, password reset, optional email verification, and sign-out.
+- Four-step onboarding with blood group, age, preliminary screening declaration, last donation, approximate GPS, and manual city fallback.
+- Four-step request creation, hospital verification, urgency, deadline, private notes, and duplicate prevention.
+- Real-time request tracking, sharing, hospital maps/directions, donor offers, accept/decline, and consent-controlled contacts.
+- Hospital verification/rejection, transactional donation confirmation, arranged units, fulfillment, completion, cancellation, and automatic expiry.
+- ABO/Rh compatibility, eligibility, distance/readiness/reliability ranking, scheduled batches, and expanding-radius escalation.
+- Inbox/read state, device push registration, deep links, push tickets/receipts, and invalid-token deactivation.
+- Donor availability, pauses, notification/privacy preferences, matching area, eligibility, and history.
+- Admin accounts/roles, hospital assignments and management, reports, analytics, matching policy, and audit records.
+- Optional server-side DeepSeek summaries and suggested urgency, with deterministic fallback.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Connect services later
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Follow [docs/SETUP.md](./docs/SETUP.md). Preserve existing `.env.local` values and merge missing keys instead of overwriting the file.
 
-## Join the community
+```env
+EXPO_PUBLIC_APP_MODE=live
+EXPO_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
+EXPO_PUBLIC_CONVEX_SITE_URL=https://your-deployment.convex.site
+```
 
-Join our community of developers creating universal apps.
+The `.cloud` endpoint serves real-time data; `.site` serves Better Auth HTTP routes. Live mode with missing/invalid URLs shows a setup screen. It never silently substitutes demo success.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The backend includes the Better Auth component, indexed schema, functions, actions, HTTP routes, `/health`, scheduler, and expiry cron. `npx convex dev` regenerates the checked-in schema-derived bootstrap utilities with deployment-specific component types.
+
+## Commands
+
+Development test logins, the full request-to-donation flow, and every role's
+feature checklist are in [docs/TESTING.md](./docs/TESTING.md). The internal seed
+creates real Better Auth accounts on the development deployment and preserves
+existing data when run again.
+
+```powershell
+npm start
+npm run web
+npm run lint
+npm run typecheck
+npm test
+npm run format
+npm run backend
+npm run doctor
+```
+
+Install additions with `npx expo install <package>`. npm is retained with `package-lock.json`. `.npmrc` avoids installing Better Auth’s optional SQL/framework peer dependencies; this project uses its Convex adapter. Auth and its Expo plugin are pinned to compatible versions.
+
+## Structure
+
+```text
+src/app/            Expo Router screens and layouts only
+src/components/     Shared mobile UI and platform-specific hospital maps
+src/providers/      Separate demo/live state and typed command dispatch
+src/domain/         Types, validators, compatibility, eligibility and ranking
+src/data/           Fictional data and interactive demo lifecycle
+src/hooks/          Location and notification permissions/deep links
+src/lib/            Configuration and auth client
+convex/             Schema, auth, queries, mutations, actions, HTTP and crons
+convex/lib/         Server authorization, validation and auditing
+tests/              Domain, demo lifecycle and actual Convex function tests
+docs/               Connection guide and architecture
+```
+
+## Security and practical limits
+
+Signup only grants donor or requester access. The backend checks identity, active account, ownership, role, and hospital scope. Coordinator/admin grants require an administrator; the first admin is bootstrapped with an internal project-owner command.
+
+Donor coordinates are rounded and visible only in the donor’s own profile. Requesters receive approximate distances. Emails/phones are private; donor phone sharing requires acceptance and consent. Notes are restricted to the requester and authorized care team, and never enter push payloads or the DeepSeek prompt.
+
+This MVP supports whole-blood/red-cell compatibility, not clinical screening. Default preliminary policy is age 18–65 and a 90-day interval, configurable by an administrator. Each confirmed donor contributes one recorded unit. Receiving facilities must review policy and perform final medical screening.
+
+Dashboard data is bounded to recent records; analytics describe that loaded window. Historical pagination and large-scale aggregate reporting are future work. Distances are approximate straight-line distances. Push requires a physical device and a development/production build. Web displays hospital address/directions instead of the native map.
+
+Service accounts, credentials, sender-domain verification, native Maps configuration, FCM/APNs signing, and EAS builds are completed when you connect services. Offline tests mock the external identity adapter; real auth issuance, native push and maps require connected-device testing. Social sign-in, SMS, passkeys, payments, clinical diagnosis, transport, and predictive AI remain outside this MVP.

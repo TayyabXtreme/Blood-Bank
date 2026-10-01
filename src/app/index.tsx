@@ -1,17 +1,11 @@
-import { Text, View, StyleSheet } from "react-native";
-
+import { Redirect } from 'expo-router';
+import { useApp } from '@/providers/AppProvider';
+import { appMode, serviceConfig } from '@/lib/config';
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+  const { authenticated, data } = useApp();
+  if (appMode === 'live' && !serviceConfig.ready) return <Redirect href="/setup" />;
+  if (!authenticated) return <Redirect href="/(auth)/welcome" />;
+  if (data.user?.status === 'suspended') return <Redirect href="/suspended" />;
+  if (!data.user?.onboardingCompleted) return <Redirect href="/(onboarding)/profile" />;
+  return <Redirect href="/(tabs)" />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

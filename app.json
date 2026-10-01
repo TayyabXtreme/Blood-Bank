@@ -1,42 +1,49 @@
 {
   "expo": {
-    "name": "codexgram",
-    "slug": "codexgram",
+    "name": "BloodBank",
+    "slug": "bloodbank",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "codexgram",
-    "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/bloodbank-icon.png",
+    "scheme": "bloodbank",
+    "userInterfaceStyle": "light",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "bundleIdentifier": "com.bloodbank.mobile",
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundColor": "#BC2846",
+        "foregroundImage": "./assets/images/bloodbank-icon.png"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.bloodbank.mobile"
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/bloodbank-icon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "BloodBank uses your approximate location to find nearby compatible blood requests. Your home location is never shared."
+        }
+      ],
+      ["expo-notifications", { "color": "#BC2846", "defaultChannel": "blood-requests" }],
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#FBF8F6",
+          "image": "./assets/images/bloodbank-icon.png",
+          "imageWidth": 100
         }
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": true
     }
   }
 }
