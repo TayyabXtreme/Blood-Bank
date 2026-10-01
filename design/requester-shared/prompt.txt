@@ -1,0 +1,63 @@
+Use case: ui-mockup.
+Create ONE realistic, production-quality design board with FIVE distinct mobile application screens of Blood Bank. These are five screens of one consistent app, NOT alternative concepts. Faithfully continue the exact visual system of the attached APPROVED authentication and onboarding boards. The third attached original Dribbble image is supporting inspiration only. Approved references override its features and content.
+
+Input images: image 1 approved auth style and exact Blood Bank droplet logo; image 2 approved onboarding style, logo, geometry, typography; image 3 original inspiration. Use same split red droplet mark, white curving interior streak, burgundy Blood Bank wordmark. Rounded geometric font matching references, bold burgundy/red headings, legible 14–16px equivalent body, warm ivory/pale blush surfaces, deep red pill CTAs, fine burgundy/red outlines, large rounded standalone request cards, understated blush fills, restrained red blood-cell and hand illustrations. Keep calm and readable; avoid covering text with illustrations. Do not switch to blue, purple or black dashboard styling.
+
+Dimensions/composition: Each frame is native app content 390 x 844, complete front-on, consistent scale and aspect ratio. Arrange three screens on top and two on bottom on a clean light board in a 3x2 grid; leave bottom-right slot EMPTY, no sixth screen or feature panel. Board approximately 1320 x 1880 or higher resolution with sufficient gutters. All frame ID/name labels OUTSIDE above frames. Display five full frames, no perspective, crop, bezel, hardware, notch, OS/status bar, clock, battery, home indicator, screen shadow. Rounded corners only subtly like approved board. App content must fill each frame naturally, generous intentional spacing, body text genuinely readable.
+
+Current date anchor: Thursday 1 October 2026 Asia/Karachi. Use relative times below. Regional example is Civil Hospital, Hyderabad, Pakistan. No unsupported appointments, transport, payment, chat, rewards, blood products, extra tabs, staff self-role selection, medical diagnosis or final eligibility guarantees.
+
+Five screens in reading order:
+
+TOP LEFT: external label "HOME-01  Requester home".
+Compact Blood Bank logo/wordmark header and location "Hyderabad". Greeting "Hello, Sara" with short line "Help is closer than you think."
+A prominent pale-blush/red outlined hero area, modest hand holding red droplet illustration, title "Need blood urgently?", one full-width deep red pill CTA "Request Blood".
+"Your active request" section with a standalone rounded outlined card: blood-group badge "B+", urgency "Urgent", "Civil Hospital", "Hyderabad", "2 units needed · Within 6 hours". Status "Partially Fulfilled". Clear progress bar and label "1 of 2 units arranged". Secondary short line "2 donors accepted"; these are separate from confirmed units. Link "Track request" with chevron. This card is the clear second focus.
+"Nearby requests" heading, compact single recent card/row "O+ · 1 unit" / "Civil Hospital" / "Approx. 3.4 km · Within 4 hours", small "View all".
+Compact simple stats on one baseline: "1 Active" and "2 Completed". A brief emergency guidance line "For immediate care, contact your hospital."
+Bottom red pill tab bar with outlined icons AND readable labels "Home", "Requests", "Alerts", "Profile"; Home selected with light circular icon backdrop.
+
+TOP MIDDLE: external label "REQ-01  Requests list".
+Same compact Blood Bank lockup; heading "Requests", subtitle "Find and track blood requests."
+Large rounded outlined search input with magnifier, placeholder "Search hospital or city".
+Active/History segmented pill control with "Active" selected red.
+Four small outlined filter chips in an unclipped 2x2 layout: "Blood group", "Urgency", "Status", "Location", each chevron, no unlabeled icons-only filters.
+Two large rounded fine-red-outlined request cards:
+First: B+ badge, "Urgent", "Civil Hospital", "Hyderabad", "2 units needed", "Within 6 hours · Approx. 3.4 km", "Verified", "Partially Fulfilled", red half-progress bar, "1 of 2 units arranged", link "View request".
+Second: O+ badge, "Urgent", "Civil Hospital", "Hyderabad", "1 unit needed", "Within 4 hours · Approx. 3.4 km", "Verified", "Active", link "View request".
+No public donor names, phones, addresses, emails. Correctly labelled bottom red pill navigation, Requests selected.
+
+TOP RIGHT: external label "SHARED-01  Alerts inbox".
+Same compact brand header, heading "Alerts". Small action "Mark all read".
+All/Unread segmented tabs with "All" selected, unread count "2".
+"Today" grouping. Clean native notification list rows with small red outlined icon in blush circle, chevron at right, and readable timestamp.
+First pale-blush highlighted unread row with red dot: "A donor accepted" / "A donor responded to your B+ request at Civil Hospital." / "2 min ago".
+Second pale-blush highlighted unread row with red dot: "1 unit arranged" / "Your B+ request is partially fulfilled. 1 of 2 units arranged." / "15 min ago".
+Third read row, no dot: "Request verified" / "Your Civil Hospital request is now active." / "1 hour ago".
+"Yesterday" grouping. Fourth read row: "Request completed" / "Your previous request is completed." / "Yesterday".
+No medical details or public contact identifiers. Use native grouped rows and simple separators, not nested cards.
+Bottom red pill nav with Home / Requests / Alerts / Profile, Alerts selected, small count badge 2.
+
+BOTTOM LEFT: external label "SHARED-02  Profile / edit · Donor".
+Shared donor-role profile variant; this is not a requester profile containing donor-only fields. Same compact Blood Bank header, heading "My profile"; an outlined simple avatar and summary "Ali Khan" / small red "Donor" role label, small "Edit" action.
+"Personal information" native grouped clean rows with subtle separators: "Full name" value "Ali Khan", "Email" value "ali@example.com", "Phone (optional)" value "+92 300 1234567", "City" value "Hyderabad". An edit/pencil affordance communicates editable rows. Personal identifiers are only in the owner's profile.
+"Donor details" grouped rows: "Blood group" value "B+", "Last donation" value "12 March 2026", "Availability" value "Available" with compact red on-switch.
+Small readable blush guidance "Eligibility is preliminary. Final screening is performed by the hospital."
+Row with bell icon "Notification preferences" and chevron.
+Full-width fine-red-outlined pill "Sign out", sufficient bottom spacing.
+Bottom red pill bar with all four labelled tabs, Profile selected. Keep content within 844px, no clipped rows. No role-changing picker, admin control or extra fields.
+
+BOTTOM MIDDLE: external label "SHARED-03  Notification preferences".
+Native subpage with back arrow to profile, same small brand lockup, heading "Notification preferences" wrapping cleanly if needed, short intro "Choose how you stay informed."
+Clean grouped list rows on base ivory surface, not a bulky card grid:
+"Push notifications" / "Receive alerts on this device." with red on-switch.
+Short permission status "Permission granted", with subtle check icon and supporting row "Device settings" with chevron.
+"Donor request alerts" / "Compatible requests near you." with red on-switch, referencing donor notificationEnabled preference.
+"In-app inbox" / "Your request updates stay available in Alerts." read-only row, no fake third channel.
+Small restrained bell-and-droplet illustration directly matching approved onboarding notifications artwork, around 100px tall, placed beneath settings without distracting from switches.
+Low-contrast supporting line "Changes are saved automatically."
+Small privacy guidance "Alerts never include patient medical information."
+No email/SMS/WhatsApp channels, no quiet hours, categories beyond those described, urgency override, timing scheduler, sounds, transport, or appointments.
+Leave natural whitespace. Back navigation and switches are main controls; no unnecessary Save CTA. No bottom tab bar on this pushed preferences subpage.
+
+Maintain precise brand continuity across all FIVE frames. Each screen shows its required content with clear hierarchy, readable UI text, realistic mobile spacing, 44px equivalent main touch targets, and no crowding. Never add a sixth frame.

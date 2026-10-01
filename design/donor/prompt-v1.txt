@@ -1,0 +1,72 @@
+Use case: ui-mockup
+Asset type: one coherent Blood Bank donor-flow design board containing SIX DISTINCT screens, not style alternatives.
+Primary request: create production-quality native mobile UI designs which continue the EXACT visual language in the attached approved authentication and onboarding boards. Reference images 1 and 2 are approved visual-style and brand sources; image 3 is supporting original inspiration. Do not copy their screen contents. Use their exact two-tone red droplet logo with its white flowing inner curve and Blood Bank wordmark, typography, colors, thin burgundy outlines, generous rounded corners, large red pill buttons, subtle warm ivory/pale-blush textured surfaces and restrained red blood-cell / outlined-hand artwork. Do not invent a different brand.
+Presentation: one flat front-on board with 3 columns and 2 rows; each screen has a complete 390 x 844 logical-pixel native mobile viewport. Board about 1280 x 1850 with generous narrow white gutters. Show six full-length equally sized rectangular content frames, no perspective, no bezel, no OS status bar, no notch, no battery, no home indicator, no browser chrome, no device shadow. Put frame IDs and names in a readable dark label OUTSIDE and above each screen. No other board captions. Do not cut off any screen or bottom content. Prioritize legibility at large output size; body 14-16px logical, titles 26-30px bold, touch controls 48px+, screen side padding 22px.
+Typography and style: rounded geometric sans as approved references, dark burgundy headings, dark charcoal supporting text, deep saturated red primary CTAs, red outlines, pale blush fills, large rounded request cards as original source. Never generic blue/teal app styling. Small decorative red blood-cell imagery only at quiet corners away from text, and one restrained hand/droplet motif on the history hero. Match source styling closely.
+Current date anchor: Thursday 1 October 2026, Asia/Karachi. Examples and relative urgency refer to that date. Do not introduce scheduling, appointments, payments, blood delivery, transport services or patient names.
+Navigation: main tabs Home, Requests, Alerts, Profile shown with both clear outline icons and text labels inside a red rounded pill bottom bar. Home active on HOME-02; Requests active on DON-01, DON-02 and DON-03; Profile active on DON-04 and DON-05. All four labels must be accurately spelled on every bar. Detail screens have a burgundy back arrow near their title.
+Screen arrangement in reading order:
+
+TOP LEFT — outside label "HOME-02  Donor home"
+Compact Blood Bank logo header. Greeting "Hello Tayyab" with "Hyderabad" supporting text and small B+ blood-group chip.
+Title "Ready to help?".
+Rounded availability row: "Available" with a red ON switch and small "Manage" link.
+Preliminary eligibility panel: check icon, "Preliminarily eligible", then "Final screening is performed by the receiving hospital." No guarantee of medical eligibility.
+Section "Emergency requests near you" and "View all" link.
+One prominent rounded request card: red CRITICAL badge, B+ group, "Civil Hospital", "Hyderabad", "2 units needed", "Required within 4 hours", "Approx. 3.4 km away", verified check + "Verified". Red pill "View request".
+At lower area: "Your donations", total "6 completed", recent "12 Mar 2026 · Civil Hospital", secondary "View history" link. Do not count an accepted request as completed. Blood group B+ remains readable. Bottom tab bar, Home active. Fit all required content with generous readable spacing.
+
+TOP CENTER — outside label "DON-01  Incoming & accepted"
+Compact logo, title "Your requests", subtitle "Compatible requests near you".
+Segmented control "Incoming (2)" / "Accepted (1)", Incoming selected red.
+Show two compact incoming request cards: first "CRITICAL · B+", "Civil Hospital", "Hyderabad", "2 units · Within 4 hours", "Approx. 3.4 km · Verified", "View request" outlined red pill. Second "URGENT · B+", "Civil Hospital", "Hyderabad", "1 unit · Within 6 hours", "Approx. 3.4 km · Verified", "View request".
+Below a small "Accepted" section: compact accepted item "B+ · Civil Hospital", "Awaiting coordination", red "View details" link. This is a different accepted request, and its blood collection is not yet confirmed.
+Small privacy line "Your exact location stays private."
+Bottom tab bar, Requests active. No donor directory or public contact information.
+
+TOP RIGHT — outside label "DON-02  Request details"
+Compact logo, back arrow and title "Request details".
+Status row "CRITICAL" pill plus "Verified" with check.
+Large B+ identifier with "2 units needed".
+Hospital "Civil Hospital" / "Hyderabad".
+Three spaced information rows: "Distance" / "Approx. 3.4 km away"; "Required by" / "Within 4 hours"; "Request status" / "Active".
+Rounded pale blush summary section title "Request summary" with verbatim short copy "B+ blood urgently required at Civil Hospital, Hyderabad. Two units needed within four hours."
+Notice "Eligibility is preliminary. Final medical screening is performed by the receiving hospital."
+At bottom above nav: outlined "Decline" and filled red "Accept request" side by side, clear large touch targets. Never expose donor home or patient identity.
+Bottom tabs Requests active.
+
+BOTTOM LEFT — outside label "DON-03  Accepted coordination"
+Compact logo, back arrow, title "You accepted".
+Check and red/pale blush status badge "Accepted". Title "Civil Hospital" / "Hyderabad".
+Two compact rows "B+ · 2 units required" and "Required within 4 hours". Request status "Donors contacted".
+Address section label "Hospital address", text "Civil Hospital Road, Hyderabad" followed by understated "Example address" to mark mock address explicitly.
+Small flat pale blush map preview showing only hospital pin and hospital-area streets, no donor home pin, no exact donor location. Large red pill "Get directions" beneath.
+Coordinator panel heading "Hospital coordinator", short line "Contact shared with permission", outlined "Call coordinator" with phone icon. No invented phone number, patient name or patient information.
+Small confirmation note "Donation will appear in your history once the coordinator confirms it."
+Bottom tabs Requests active. This is post-acceptance coordination, not an appointment booking interface.
+
+BOTTOM CENTER — outside label "DON-04  Availability"
+Compact logo, back arrow, title "Your availability", subtitle "Choose when you can receive requests."
+Main rounded row "Available for requests" with toggle OFF, label "Paused".
+Supporting text "New emergency requests are paused. Your accepted requests stay available."
+Title "Pause until"; outlined date field calendar icon and "2 Oct 2026", time field clock icon and "9:00 AM"; underline "Tomorrow, 9:00 AM" as explanatory copy. These controls manage donor availability only, no hospital scheduling.
+Pale blush info note "Your availability resumes at the selected time. Final donation eligibility still requires hospital screening."
+Large red pill "Save availability". Secondary outlined "Resume now".
+Small privacy note "Your exact home location is never shown."
+Bottom tabs Profile active.
+
+BOTTOM RIGHT — outside label "DON-05  Donation history"
+Compact logo, back arrow, title "Your donations".
+Pale blush rounded hero with subtle red outlined hand/droplet motif and large "6", label "Completed donations", supporting "Confirmed by a coordinator".
+Section "Donation history". Six simple readable rows in one grouped surface with light dividers, each blood-drop icon B+, hospital, date and "Completed":
+"12 Mar 2026 · Civil Hospital"
+"10 Nov 2025 · Civil Hospital"
+"8 Jul 2025 · Civil Hospital"
+"5 Mar 2025 · Civil Hospital"
+"1 Nov 2024 · Civil Hospital"
+"28 Jun 2024 · Civil Hospital"
+Each record indicates "1 unit" and Completed subtly, avoiding oversized separate cards for every row.
+Small note "Only confirmed donations count toward your total."
+Bottom tabs Profile active.
+
+Constraints: preserve all six screen IDs exactly and all required fields, maintain consistency with approved refs, make every title, body, label and navigation item readable. One coherent branded donor experience. No alternatives, no extra screens, no charts, no unrequested services, no final medical eligibility claims. Complete front-on 390x844 mobile contents.

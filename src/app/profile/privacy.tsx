@@ -1,0 +1,7 @@
+import { router } from 'expo-router';
+import { Text, View } from 'react-native';
+import { BloodHeader, BloodScreen, InfoLine, ui } from '@/components/blood/ui';
+
+export default function PrivacyScreen() {
+  return <BloodScreen><BloodHeader back={() => router.back()} /><Text style={ui.title}>Privacy & care</Text><View style={{ gap: 18, paddingVertical: 24 }}><Text style={ui.section}>Share only what is needed</Text><Text style={ui.body}>Blood requests display the blood group, units, hospital, city, urgency and deadline. Avoid patient names, diagnoses and private contact details in request descriptions.</Text><Text style={ui.section}>Contact details</Text><Text style={ui.body}>Donor contact details are withheld before acceptance. Authorized coordinators and participants use accepted donor details only to arrange the donation.</Text><Text style={ui.section}>Location</Text><Text style={ui.body}>Location helps identify nearby donors. Public requests show the receiving hospital. You can manage device location permissions in your phone settings.</Text><Text style={ui.section}>Report misuse</Text><Text style={ui.body}>Use “Report this request” in request details to flag incorrect information, duplicate requests or suspicious activity.</Text><InfoLine>This application does not diagnose conditions or determine final donation eligibility. Receiving hospitals conduct screening and compatibility testing. For emergencies, contact your hospital immediately.</InfoLine></View></BloodScreen>;
+}

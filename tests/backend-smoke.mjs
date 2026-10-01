@@ -1,0 +1,45 @@
+import assert from 'node:assert/strict';
+import { ConvexHttpClient } from 'convex/browser';
+import { anyApi } from 'convex/server';
+
+const client = new ConvexHttpClient(process.env.CONVEX_SMOKE_URL ?? 'http://127.0.0.1:3210');
+const sessions = {};
+for (const role of ['requester', 'donor', 'coordinator', 'admin']) {
+  sessions[role] = (await client.mutation(anyApi.app.startDemo, { role })).sessionToken;
+  assert.match(sessions[role], /^[a-f0-9]{64}$/);
+}
+const read = role => client.query(anyApi.app.snapshot, { sessionToken: sessions[role] });
+const command = (role, operation, payload) => client.mutation(anyApi.app.command, { sessionToken: sessions[role], operation, payload });
+let requester = await read('requester');
+const coordinator = await read('coordinator');
+const hospital = requester.hospitals.find(h => h.id === coordinator.user.hospitalId);
+const request = await command('requester', 'createRequest', { clientRequestId: `smoke:${Date.now()}`, hospitalId: hospital.id, bloodGroup: 'AB+', unitsRequired: 1, urgency: 'Urgent', requiredBefore: Date.now() + 3600000, description: 'Fictional demo request created by backend smoke test.' });
+await assert.rejects(command('requester', 'verifyRequest', { requestId: request.requestId }));
+await command('coordinator', 'verifyRequest', { requestId: request.requestId });
+requester = await read('requester');
+const initialResponses = requester.responses.filter(r => r.requestId === request.requestId);
+assert.ok(initialResponses.length > 0 && initialResponses.length <= 5);
+assert.ok(initialResponses.every(r => r.donorName === 'Compatible donor' && !r.phone && !r.donorPhone && !r.latitude && !r.email));
+let donor = await read('donor');
+const response = donor.responses.find(r => r.requestId === request.requestId);
+assert.ok(response, 'Seeded demo donor should be in the first ranked batch.');
+await command('donor', 'respondRequest', { requestId: request.requestId, response: 'Accepted' });
+requester = await read('requester');
+assert.equal(requester.requests.find(r => r.id === request.requestId).unitsArranged, 0);
+await assert.rejects(command('requester', 'confirmDonation', { responseId: response.id, units: 1 }));
+await command('coordinator', 'confirmDonation', { responseId: response.id, units: 1 });
+await command('coordinator', 'confirmDonation', { responseId: response.id, units: 1 });
+requester = await read('requester');
+assert.equal(requester.requests.find(r => r.id === request.requestId).unitsArranged, 1);
+assert.equal(requester.donations.filter(d => d.requestId === request.requestId).length, 1);
+await command('requester', 'completeRequest', { requestId: request.requestId });
+assert.equal((await read('requester')).requests.find(r => r.id === request.requestId).requestStatus, 'Completed');
+donor = await read('donor');
+assert.equal(donor.donor.eligibilityStatus, 'TemporarilyIneligible');
+const foreignRequest = requester.requests.find(r => r.hospitalId !== coordinator.user.hospitalId);
+if (foreignRequest) await assert.rejects(command('coordinator', 'cancelRequest', { requestId: foreignRequest.id }));
+const ai = await client.action(anyApi.integrations.assist, { sessionToken: sessions.requester, requestId: request.requestId });
+assert.equal(ai.available, false);
+assert.equal(ai.source, 'rules');
+console.log('PASS: live Convex roles, tokens, verification, ranked privacy, accept versus confirmed units, donation idempotency, completion, hospital scope, and honest AI fallback.');
+console.log(`Completed fictional demo request: ${request.requestId}`);

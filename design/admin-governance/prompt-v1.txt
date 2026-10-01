@@ -1,0 +1,60 @@
+Create ONE production-quality Blood Bank mobile UI design board showing FOUR DISTINCT screens from ONE coherent app, not style alternatives. Match the attached APPROVED authentication board and APPROVED onboarding board precisely: same red droplet logo with curved white internal cutout and two red tones, same "Blood Bank" wordmark, warm ivory/pale blush lightly textured surfaces, deep burgundy rounded geometric bold typography, deep red pill CTAs, fine red outlines, large rounded grouped cards, restrained red blood-cell decoration only in unused corners. The third image is the original design inspiration https://dribbble.com/shots/24159727-Blood-Donation-App-Design; use its aesthetic only and do not import extra features.
+
+Audience: authorized mobile administrator of Blood Bank, a blood request and donor matching app in Hyderabad, Pakistan. Goal: review reports, understand platform request/donation activity, inspect sensitive-operation history, adjust matching weights. This is design only. Scope is documented Plan.md sections 4.4 ADM08/10/11/12, 7.2, 11.8, 11.9. Do not invent missing sections or administrative controls.
+
+Composition: exactly FOUR COMPLETE straight-on flat native app content frames, each conceptual viewport 390 x 844, arranged 2 columns by 2 rows. Export a tall high-resolution board around 1800 x 3840 so all text is readable. No perspective, no phone bezel/body, no notch, no OS chrome/status bar/clock/battery, no home indicator. Show complete bottom content. Narrow white external gutters. Put frame ID and name OUTSIDE each frame in the outer top gutter. Labels: top left "ADMIN-05 Reported requests"; top right "ADMIN-06 Platform analytics"; bottom left "ADMIN-07 Audit logs"; bottom right "ADMIN-08 Configuration". All four frames visually same app. Header small exact brand logo/wordmark, burgundy back chevron, spacious strong title. Body typography 14-16px, screen title 28-30px. Mobile comfortable touch targets. Do not put cards inside cards.
+
+Shared navigation at bottom where appropriate: deep red rounded pill bottom tab bar containing four correctly labelled white line icons and words "Home", "Requests", "Alerts", "Profile"; no other app tabs. These are admin detail screens reached from Home; Home selected with pale circular icon highlight. Reserve ~78px for bottom navigation so no overlap.
+
+Date anchor: today 1 Oct 2026, Asia/Karachi. Use relative urgency and chronological timestamps. Sample metrics and records are MOCK and must be labelled "Demo data". Donor phone, email and exact home address must never appear.
+
+ADMIN-05, top left:
+Header brand, back, title "Reported requests", small subtitle "Review and resolve reports". A single short segmented filter "Unresolved" selected red, "Resolved" outlined. Feature one spacious report detail grouped panel with thin red outline:
+"Report R-024" with small "Unresolved" pill.
+"Request BB-1042"
+"Civil Hospital, Hyderabad"
+Blood badge "B+" beside "2 units · Urgent"
+"Needed within 6 hours"
+Fine separator.
+Label "Reported by" then "User U-018"
+Label "Reason" then "Possible duplicate"
+Label "Details" then "This may repeat request BB-1038."
+Small timestamp "1 Oct 2026 · 09:20"
+Below panel small outlined secondary button "View request".
+Primary deep red pill button "Mark report resolved".
+Below in a smaller simple text area, resolved-state example: "Report R-021 · Resolved" and "Resolved by Admin A-02" showing documented resolvedBy field. Small unobtrusive "Demo data". Do not invent penalties, medical judgments or case-escalation policies. Maintain readability and whitespace.
+
+ADMIN-06, top right:
+Header title "Platform analytics", subtitle "Requests and donation activity".
+"Demo data" and date filter outlined pill "Last 7 days" with "25 Sep–1 Oct 2026".
+Two generous side-by-side summary values with simple fine outlines/pale blush: "Requests" value "128"; "Confirmed donations" value "74".
+A large rounded blush chart area titled "Daily activity", red solid line for "Requests", burgundy dotted line for "Donations"; accessible legend text, no unrelated metrics. Seven evenly spaced date labels "25", "26", "27", "28", "29", "30", "1", small month description "Sep → Oct". Reasonable chart values and readable axis.
+Below a single grouped summary titled "Request status" with three clean rows "Active 32", "Partially fulfilled 18", "Completed 54". These are illustrative subset counts and do not pretend to account for all 128. No revenue, appointments, transport, payment, medical success score, invented exports or predictive analytics.
+
+ADMIN-07, bottom left:
+Header title "Audit logs", subtitle "Sensitive operation history".
+Compact outlined filter controls in two rows: "Date: Today", "Action: All", "Entity: All". Action filter corresponds ONLY to six supported examples. Search field "Search user or entity ID".
+One readable grouped activity list with fine separators, NOT each row oversized card. Show all six exact action identifiers, six chronological rows dated 1 Oct 2026:
+"REQUEST_CREATED" / "U-018 · bloodRequests / BB-1042" / "09:00"
+"REQUEST_VERIFIED" / "A-02 · bloodRequests / BB-1042" / "09:10"
+"DONOR_ACCEPTED" / "D-014 · donorResponses / DR-028" / "09:25"
+"DONATION_CONFIRMED" / "C-03 · donorResponses / DR-019" / "10:05"
+"REQUEST_REJECTED" / "A-02 · bloodRequests / BB-1037" / "10:20"
+"ACCOUNT_SUSPENDED" / "A-02 · users / U-009" / "10:40"
+Use compact rounded mono-like identifier text of readable size with burgundy leading line icon and trailing chevron. Display newest first in actual layout: 10:40 at top then 10:20,10:05,09:25,09:10,09:00. Small "1 Oct 2026 · Demo data" above list. A tiny caption "Tap an entry for metadata" so optional metadata is discoverable. No destructive controls, IP location, export, restore or invented security policy.
+
+ADMIN-08, bottom right:
+Header title "Configuration", subtitle "Matching settings".
+Grouped pale blush section title "Mandatory gates". Three READ-ONLY required rows with burgundy lock or check icon and "Required" label: "Blood compatibility", "Preliminary eligibility", "Availability". Mandatory gates cannot be switched off.
+Section heading "Matching weights", sublabel "Configurable · Example values".
+Five precise tidy adjustable number field rows in a single outlined rounded section:
+"Distance" value "40%"
+"Availability" value "20%"
+"Donation readiness" value "20%"
+"Response reliability" value "10%"
+"Urgency relevance" value "10%"
+Each row has a numeric field with minus and plus small outlined touch controls; clearly editable percentages. "Total 100%" below the rows.
+Small clear notice on pale blush with info icon: "Eligibility is preliminary. Final screening is performed by qualified healthcare professionals."
+Full-width red pill "Save configuration". Keep this above bottom tab bar. No guessed donation interval, minimum age, batch size, notification timing, permissions or security settings.
+
+Hard constraints: precise consistent logo/style from attachments; exact four distinct frame IDs; exact five weight values; include all six exact audit actions; crisp correctly spelled text; avoid crowded layout, tiny labels, clipping, distorted graphics and overlapping UI. Restrained clinical product experience with the warm source style. Provide complete readable flat app screens.

@@ -1,0 +1,64 @@
+Use case: ui-mockup.
+Create ONE coherent production-quality mobile UI board for Blood Bank with SIX DISTINCT screens of a single request workflow. These are not alternatives. Precisely continue the visual system of the attached approved auth and onboarding boards: same red layered droplet logo with white curved cutline, same Blood Bank burgundy wordmark, same rounded geometric type, warm ivory/pale blush lightly textured surface, dark burgundy headings, fine red outlines, red gradient pill CTAs, softly rounded large cards, restrained red blood-cell accents and hand/blood illustrations. Match attached references closely; do not redesign the brand.
+
+INPUT IMAGES: image 1 approved auth board = brand/style authority; image 2 approved onboarding board = forms/chips/layout authority; image 3 original aPurple inspiration = secondary style context only. URL context https://dribbble.com/shots/24159727-Blood-Donation-App-Design. Do not reproduce unrelated original features.
+
+COMPOSITION: one large high-resolution board, 3 columns x 2 rows, SIX complete front-on native app content frames, each logically 390 x 844 pixels, equal scale and portrait proportion. Generous clean gutters on off-white board. No perspective, no phone bezels, no OS clock/status bar, no notch, no battery, no home indicator, no device shadows. Do not crop or clip any frame. Frame IDs and names above each frame OUTSIDE app content. Top row REQ-02, REQ-03, REQ-04. Bottom row REQ-05, REQ-06, REQ-07. English UI copy clearly readable at full resolution. Font hierarchy: approx 30px bold headings, 15-16px body, 13-14px helper text per logical frame. Keep ALL screens visually identical to approved attached design. Maintain generous vertical spacing, simple hierarchy, large touch targets. Decorative blood-cell accents stay at corners away from controls and words. Small original droplet+Blood Bank horizontal brand lockup at top of each screen.
+
+PRODUCT: requester workflow. Current date 1 October 2026, timezone Asia/Karachi. Example B+ blood, 2 units, Civil Hospital, Hyderabad, required within 6 hours. Use relative urgency and visible date 1 Oct 2026 for required-by input. No personal patient info, public donor phone numbers, exact donor locations, donor names, medical eligibility promises, appointments, transport, payments, or invented features. Use only tabs Home, Requests, Alerts, Profile when appropriate, with clearly labelled simple icons in deep red pill bottom bar, Requests selected. Creation wizard screens use a sticky primary Continue/Submit action and Back; tracking/management use tab bar. No tabs needed inside creation wizard.
+
+FRAME 1 OUTSIDE LABEL: "REQ-02  Blood & units".
+Brand lockup. Back chevron. Four-segment red/pale step indicator first segment active, "Step 1 of 4".
+Heading "What blood is needed?" subtitle "Choose the blood group and units required."
+Label "Blood group". EXACTLY EIGHT chips in 2 rows of 4: row one O−, O+, A−, A+; row two B−, B+, AB−, AB+. B+ selected solid red with white text, remaining thin red outline on ivory. No duplicated or missing chip.
+Label "Units required". Large outlined rounded stepper with minus button, centered "2" and plus button.
+Small helper "Enter the units requested by the hospital."
+Subtle small red blood-drop/hand graphic below form, no clutter.
+Bottom red pill "Continue".
+
+FRAME 2 OUTSIDE LABEL: "REQ-03  Hospital & location".
+Same brand, back, wizard indicator second segment, "Step 2 of 4".
+Heading "Where is blood needed?" subtitle "Select the receiving hospital."
+Label "Hospital". Outlined search input with search icon and "Search hospitals".
+One selected large outlined rounded hospital card: simple hospital icon, "Civil Hospital", "Hyderabad", selection tick.
+Label "Location". Outlined field pin icon "Hyderabad".
+Soft blush hospital/location illustration, restrained and in source style.
+Small helper "Use the hospital location for matching."
+Bottom red pill "Continue". No permissions/donor coordinates.
+
+FRAME 3 OUTSIDE LABEL: "REQ-04  Urgency & time".
+Same brand, back, wizard third step, "Step 3 of 4".
+Heading "When is it needed?" subtitle "Set the urgency and required time."
+"Urgency" with three equally sized readable chips "Normal", "Urgent", "Critical"; Urgent selected red.
+"Required by" with outlined date/time fields "1 Oct 2026" and "Within 6 hours" (clock icon). Display relative time beside date, no inconsistent clock.
+"Description (optional)" multiline outlined input with short neutral text "B+ blood needed for hospital care."
+Helper "Avoid names or private medical details."
+Bottom red pill "Review request".
+
+FRAME 4 OUTSIDE LABEL: "REQ-05  Review & submit".
+Same brand, back, final wizard "Step 4 of 4".
+Heading "Review your request". Subtitle "Check the details before submitting."
+One large softly rounded light blush outlined summary card: top red B+ chip, "2 units required", "Urgent" outlined badge; rows "Hospital — Civil Hospital", "Location — Hyderabad", "Required by — Within 6 hours"; readable description "B+ blood needed for hospital care." small "Edit details" link. Spaced readable rows, not nested cards.
+Below separate blush explanatory panel small shield/info icon and exact heading "Pending verification" with text "Your request will be sent to a coordinator for verification before donors are notified." THIS IS BEFORE SUBMISSION: no false verified/success state.
+Bottom deep red pill "Submit request".
+
+FRAME 5 OUTSIDE LABEL: "REQ-06  Request tracking".
+Brand small at top, back icon and heading "Request tracking".
+Upper summary "B+ · 2 units", "Civil Hospital, Hyderabad", badge "Urgent" and check badge "Verified".
+Current status "Partially fulfilled".
+Large progress section heading "Confirmed donated units", "1 of 2 units" with HALF-FILLED red rounded progress bar.
+Helper "Only coordinator-confirmed donations count."
+SEPARATE row "Accepted donors" with large "2", followed by helper "Acceptance does not confirm donation." These figures must never be combined or mislabelled.
+Compact readable vertical timeline SIX states: "Pending verification" completed; "Active" completed; "Donors contacted" completed; "Partially fulfilled" current red highlighted; "Fulfilled" future light; "Completed" future light. Use ticks, fine connector, meaningful active dot. Small "Required within 6 hours" above timeline if space.
+Below timeline outlined pill "Manage request".
+Bottom red pill nav four clearly labelled white icons/text "Home", "Requests", "Alerts", "Profile", Requests selected with a lighter capsule. No donor contact details.
+
+FRAME 6 OUTSIDE LABEL: "REQ-07  Cancellation & completion".
+Same brand and top heading "Manage request".
+Underlying content full visible top half: "B+ · 2 units", "Civil Hospital, Hyderabad", status "Partially fulfilled", "1 of 2 units confirmed". A muted/disabled outlined action "Mark completed" with readable helper "Available only when permitted, after coordinator confirmation." This is a conditional completion state, not permission to confirm donations.
+Show OPEN bottom sheet with ivory rounded top corners, fine subtle shadow only at sheet edge, small handle, no dark unreadable overlay over top content. Sheet heading "Cancel this request?" supporting copy "This will stop further donor alerts for this request." small "Cancellation is available for this request." (this example is eligible; don't invent eligibility criteria).
+Primary destructive deep red pill "Yes, cancel request"; secondary thin red outline pill "Keep request". This is a CONFIRMATION state before cancellation, do not show cancelled success simultaneously.
+The bottom nav can be dimmed behind sheet; if visible exact four labels Home Requests Alerts Profile.
+No "Confirm donation" action for requester; only coordinator confirms donation.
+
+Constraints: all 6 frames and outside labels visible; no extra screen, no alternate design, no arbitrary dark theme. Same approved logo in every frame, chip style, button style, ivory/blush grain, rounded typography. Native healthcare app content, not website or device mockup. Text must be spelled correctly and readable. Never imply 2 accepted donors means 2 confirmed units. Render focused polished hierarchy without cramped cards.

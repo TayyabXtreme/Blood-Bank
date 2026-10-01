@@ -1,0 +1,57 @@
+const { chromium } = require('C:/Users/TECHNOSELLERS/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs = require('node:fs');
+const path = require('node:path');
+
+(async () => {
+  const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' });
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    const base = 'http://127.0.0.1:8081';
+    const output = path.join(process.cwd(), 'design', 'qa');
+    fs.mkdirSync(output, { recursive: true });
+    await page.goto(base, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await page.getByRole('button', { name: 'Explore the app', exact: true }).waitFor({ timeout: 60000 });
+    await page.getByRole('button', { name: 'Explore the app', exact: true }).click();
+    await page.getByRole('button', { name: 'I need blood', exact: true }).click();
+    await page.getByRole('button', { name: 'Request Blood', exact: true }).waitFor({ timeout: 30000 });
+    await page.screenshot({ path: path.join(output, 'requester-home.png'), fullPage: true });
+    await page.getByRole('button', { name: 'Request Blood', exact: true }).click();
+    await page.getByText('What blood is needed?', { exact: true }).waitFor();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.getByText('Choose the required blood group.', { exact: true }).waitFor();
+    await page.getByRole('radio', { name: 'Blood group AB-', exact: true }).click();
+    await page.screenshot({ path: path.join(output, 'request-create-step1.png'), fullPage: true });
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.getByRole('radio').first().click();
+    await page.screenshot({ path: path.join(output, 'request-create-step2.png'), fullPage: true });
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.getByRole('textbox', { name: 'Optional request description', exact: true }).fill('Demo coordination request for interface verification.');
+    await page.getByRole('button', { name: 'Review request', exact: true }).click();
+    await page.screenshot({ path: path.join(output, 'request-create-review.png'), fullPage: true });
+    await page.getByRole('button', { name: 'Create demo request', exact: true }).click();
+    await page.getByText('Request received', { exact: true }).waitFor({ timeout: 20000 });
+    await page.getByRole('button', { name: 'Track request', exact: true }).click();
+    await page.getByText('Request details', { exact: true }).waitFor();
+    await page.screenshot({ path: path.join(output, 'request-detail.png'), fullPage: true });
+    await page.getByRole('button', { name: 'Cancel request', exact: true }).click();
+    await page.getByRole('button', { name: 'Confirm cancellation', exact: true }).click();
+    await page.getByText('Request cancelled. Donor alerts have stopped.', { exact: true }).waitFor({ timeout: 15000 });
+    await page.screenshot({ path: path.join(output, 'request-cancelled.png'), fullPage: true });
+    await page.goto(base + '/requests', { waitUntil: 'domcontentloaded' });
+    await page.getByRole('button', { name: 'Show my requests', exact: true }).waitFor();
+    await page.getByRole('button', { name: 'Show my requests', exact: true }).click();
+    await page.getByRole('tab', { name: 'History', exact: true }).click();
+    await page.getByText('Cancelled', { exact: true }).first().waitFor();
+    await page.screenshot({ path: path.join(output, 'request-history.png'), fullPage: true });
+    await page.goto(base + '/alerts', { waitUntil: 'domcontentloaded' });
+    await page.getByText('Alerts', { exact: true }).first().waitFor();
+    await page.screenshot({ path: path.join(output, 'requester-alerts.png'), fullPage: true });
+    await page.goto(base + '/profile', { waitUntil: 'domcontentloaded' });
+    await page.getByText('My profile', { exact: true }).waitFor();
+    await page.screenshot({ path: path.join(output, 'requester-profile.png'), fullPage: true });
+    if (errors.length) throw new Error('Browser runtime errors: ' + errors.join('; '));
+    console.log('PASS: requester home, validation, four create steps, real demo submission, tracking, cancellation, own history, alerts and profile at 390x844. No browser runtime errors.');
+  } finally { await browser.close(); }
+})().catch(error => { console.error(error.message); process.exitCode = 1; });

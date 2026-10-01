@@ -1,0 +1,80 @@
+Use case: ui-mockup
+Create ONE production-quality design board of SIX DISTINCT Blood Bank coordinator screens, all belonging to one coherent mobile application. This is continuation of the approved attached auth/onboarding designs, not style exploration. Match their actual droplet logo, typography, warm ivory/pale blush textures, burgundy headings, fine red outlines, rounded cards and deep-red pill buttons extremely closely.
+
+Input images: Image 1 approved AUTH board (style and exact brand logo); Image 2 approved ONBOARDING board (style/brand/component language); Image 3 original blood-donation reference (restrained hand/blood-cell illustration style only). All are visual references, not edit targets. Discard unrelated features in Image 3. Reuse the SAME two-tone droplet logo with its white curved cutout and Blood Bank wordmark, no medical cross substitute.
+
+Composition: 3 columns x 2 rows. Each app viewport represents native mobile content 390x844; preserve this aspect ratio with no cropping. Export a large readable board, ideally 1800x2600 or larger. Narrow neutral-ivory board gutters. Frame IDs and names OUTSIDE and above each viewport. Six complete front-on app-content frames. NO phone bezel, rounded device mask, OS status bar, time/battery/signal, home indicator, browser chrome, perspective or device shadows. Product surfaces use warm ivory/pale blush, quietly textured near edges, enough clean background behind text. Source-like dark burgundy headings and rounded geometric sans typography; 14-16px body, 28-32px headings, bold readable numerals. Red blood-cell accents at one or two frame corners only, no medical photos or excess decoration. Source-like large rounded cards with hairline burgundy outlines and generous padding, deep red pill CTAs with white labels. Small line icons. Accessible contrast and large tap targets. Only requested content; no new product features.
+
+Date anchor: 1 October 2026, Asia/Karachi. Illustrative request BB-1042: B+, 2 units, Civil Hospital, Hyderabad, urgent, needed within 4 hours. Donor identities use anonymous Donor A/B/C labels; distances are approximate, no private addresses, phones, emails or patient medical information. Candidate eligibility is preliminary; final screening is performed by hospital staff. Mock analytics use modest illustrative operational data, no clinical claims. Values explicitly labelled sample data. Navigation where shown: labelled icons Home / Requests / Alerts / Profile inside a red pill bar; current destination marked with pale selected pill. Back chevrons in detail screens. App brand logo compact in all screens.
+
+Top-left outside label: "COORD-01  Coordinator dashboard"
+App header small droplet Blood Bank logo and small profile circle. Eyebrow "Civil Hospital · Hyderabad". Main title "Hospital coordination". Subtitle "Thursday, 1 October".
+A source-like pale blush rounded hero card: "Keep every request moving" with small restrained hand holding red droplet illustration at right; compact supporting text "Verify needs. Connect donors. Confirm donations."
+Three readable summary values in a simple compact row: "3 Pending" / "4 Active" / "2 Fulfilled".
+Primary red pill "Review pending requests".
+Section "Needs attention" containing one prominent outline card with urgency chip "URGENT", large "B+" badge, "Request BB-1042", "2 units · Within 4 hours", "Pending Verification", light outlined "Review request" action.
+Simple text row "Hospital analytics" chevron.
+Labelled bottom navigation Home selected / Requests / Alerts / Profile.
+
+Top-middle outside label: "COORD-02  Pending verification"
+Compact logo. Back arrow and title "Pending requests". Supporting "Review before donors are contacted."
+Search field "Search request ID".
+Pill filters "All 3" selected / "Urgent" / "Critical".
+Three generously spaced outlined request cards:
+1 "BB-1042" / "URGENT" / blood badge "B+" / "Civil Hospital, Hyderabad" / "2 units · Within 4 hours" / "Pending Verification" / red pill "Review request".
+2 "BB-1043" / "CRITICAL" / badge "O−" / "Civil Hospital, Hyderabad" / "1 unit · Within 2 hours" / "Pending Verification" / lightweight chevron.
+3 "BB-1044" / "NORMAL" / badge "A+" / "Civil Hospital, Hyderabad" / "1 unit · Within 24 hours" / "Pending Verification" / lightweight chevron.
+Bottom labelled tabs Requests selected.
+
+Top-right outside label: "COORD-03  Verify request"
+Compact logo, back, title "Verify request".
+"PENDING VERIFICATION" status pill; "Request BB-1042".
+Source-style outline card with large blood badge "B+", "Civil Hospital", "Hyderabad", "Urgent · Within 4 hours", short description "Two units requested at the receiving hospital."
+Section label "Confirm units required", source-style rounded stepper "[ − ]   2 units   [ + ]".
+Small checked rows "Hospital details reviewed" and "Request details confirmed".
+Rounded outline field "Rejection reason (if rejecting)" with no sample sensitive information.
+Helper text "Verification confirms the request. Hospital staff perform final donor screening."
+Primary red pill "Verify & activate".
+Secondary fine red outlined pill "Reject request".
+No tab bar if detail navigation requires the bottom actions.
+
+Bottom-left outside label: "COORD-04  Ranked donors & responses"
+Compact logo and back. Title "Compatible donors".
+"BB-1042 · B+ · 2 units" and "Civil Hospital, Hyderabad".
+Outline response summary "1 accepted / 2 needed" with slim progress.
+Grouped ranked donor list with subtle separators and small circle anonymous avatar:
+"1  Donor A" / "B+ · Approx. 2 km" / "94% match" / "Accepted"
+"2  Donor B" / "B+ · Approx. 7 km" / "81% match" / "Notified"
+"3  Donor C" / "B+ · Approx. 8 km" / "78% match" / "No response"
+"4  Donor D" / "B+ · Approx. 9 km" / "76% match" / "Declined"
+"5  Donor E" / "B+ · Approx. 10 km" / "73% match" / "Notified"
+Scores descending and clearly distinct from preliminary medical eligibility.
+Small pale-blush escalation panel: "Ranked batch: top 5 contacted" / "Next: 10 more after configured wait" / "Alerts stop once enough donors accept."
+Compact supporting sentence "Preliminary eligibility only. Final screening at hospital." No configurable wait invented, no extra call/transport action. Bottom red pill "Track responses".
+
+Bottom-middle outside label: "COORD-05  Confirm donation & close"
+Compact logo and back. Title "Confirm donation".
+"BB-1042 · Civil Hospital, Hyderabad"
+Outline request summary "B+ · 2 units required", "1 of 2 units confirmed", status "Partially Fulfilled" and slim progress.
+Small recorded row "Donor A · 1 unit" with check and "Donation confirmed".
+Clear source-style form:
+"Donor" selected outlined field "Donor B"
+"Units donated" rounded stepper "[ − ]  1 unit  [ + ]"
+"Donation date" outlined field "1 October 2026"
+Selected checkbox "Donation verified by hospital staff".
+Pale blush review strip "After confirmation: 2 of 2 units" and "Fulfilled".
+Selected checkbox "Close request after confirmation" and tiny supporting "Request will be marked Completed."
+Large red pill "Confirm donation & close".
+This is review-before-submit, not already completed. No conflation of accepted donor count with confirmed units. No donation history expanded or medical values invented.
+
+Bottom-right outside label: "COORD-06  Hospital analytics"
+Compact logo and back. Main title "Hospital analytics", "Civil Hospital · Hyderabad".
+Source-style date-range outlined pill "24–30 Sep 2026" and "Sample data".
+Three modest summary cards/values "12 Requests" / "18 Units donated" / "9 Completed".
+One simple burgundy/pale blush native-mobile column chart "Requests by day" with Thu/Fri/Sat/Sun/Mon/Tue/Wed beneath bars. Values respectively 1,2,1,3,2,1,2 (total12).
+Thin-separated summary rows "Accepted responses  15", "Declined responses  4", "No response  6".
+Small simple grouped horizontal bars "Requests by blood group" with B+5 / O+3 / A+2 / Other2 (total12).
+Tiny note "Illustrative request, donation and response data." No invented diagnostic insights, forecasts, pricing, inventory or appointment functions.
+Bottom labelled navigation Home selected / Requests / Alerts / Profile.
+
+Every screen must be legible, polished and unclipped. Preserve all six unique frame labels, exact app brand and required content, prioritize readable information hierarchy and real native mobile spacing. Avoid default blue/green SaaS dashboards, desktop tables, excessive tiny text, clutter, generic gradient panels and unrelated features.
